@@ -1,0 +1,472 @@
+# Microsoft eMbedded Visual Tools Project File - Name="LQDetect" - Package Owner=<4>
+# Microsoft eMbedded Visual Tools Generated Build File, Format Version 6.02
+# ** DO NOT EDIT **
+
+# TARGTYPE "Win32 (WCE ARMV4I) Application" 0xa501
+
+CFG=LQDetect - Win32 (WCE ARMV4I) Debug
+!MESSAGE This is not a valid makefile. To build this project using NMAKE,
+!MESSAGE use the Export Makefile command and run
+!MESSAGE 
+!MESSAGE NMAKE /f "LQDetect.vcn".
+!MESSAGE 
+!MESSAGE You can specify a configuration when running NMAKE
+!MESSAGE by defining the macro CFG on the command line. For example:
+!MESSAGE 
+!MESSAGE NMAKE /f "LQDetect.vcn" CFG="LQDetect - Win32 (WCE ARMV4I) Debug"
+!MESSAGE 
+!MESSAGE Possible choices for configuration are:
+!MESSAGE 
+!MESSAGE "LQDetect - Win32 (WCE ARMV4I) Release" (based on "Win32 (WCE ARMV4I) Application")
+!MESSAGE "LQDetect - Win32 (WCE ARMV4I) Debug" (based on "Win32 (WCE ARMV4I) Application")
+!MESSAGE 
+
+# Begin Project
+# PROP AllowPerConfigDependencies 0
+# PROP Scc_ProjName ""
+# PROP Scc_LocalPath ""
+# PROP ATL_Project 2
+CPP=clarm.exe
+MTL=midl.exe
+RSC=rc.exe
+
+!IF  "$(CFG)" == "LQDetect - Win32 (WCE ARMV4I) Release"
+
+# PROP BASE Use_MFC 1
+# PROP BASE Use_Debug_Libraries 0
+# PROP BASE Output_Dir "ARMV4IRel"
+# PROP BASE Intermediate_Dir "ARMV4IRel"
+# PROP BASE CPU_ID "{DC70F430-E78B-494F-A9D5-62ADC56443B8}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 1
+# PROP Use_Debug_Libraries 0
+# PROP Output_Dir "ARMV4IRel"
+# PROP Intermediate_Dir "ARMV4IRel"
+# PROP CPU_ID "{DC70F430-E78B-494F-A9D5-62ADC56443B8}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "THUMB" /d "_THUMB_" /d "ARM" /d "_ARM_" /d "ARMV4I" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "NDEBUG" /d "$(CePlatform)" /d "THUMB" /d "_THUMB_" /d "ARM" /d "_ARM_" /d "ARMV4I" /r
+# ADD BASE CPP /nologo /W3 /D "ARM" /D "_ARM_" /D "ARMV4I" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "UNICODE" /D "_UNICODE" /D "NDEBUG" /Yu"stdafx.h" /QRarch4T /QRinterwork-return /O2 /M$(CECrtMT) /c
+# ADD CPP /nologo /W3 /D "ARM" /D "_ARM_" /D "ARMV4I" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "UNICODE" /D "_UNICODE" /D "NDEBUG" /FR /Yu"stdafx.h" /QRarch4T /QRinterwork-return /O2 /M$(CECrtMT) /c
+# ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "NDEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"wWinMainCRTStartup" /subsystem:$(CESubsystem) /MACHINE:THUMB
+# ADD LINK32 /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"wWinMainCRTStartup" /subsystem:$(CESubsystem) /MACHINE:THUMB
+
+!ELSEIF  "$(CFG)" == "LQDetect - Win32 (WCE ARMV4I) Debug"
+
+# PROP BASE Use_MFC 1
+# PROP BASE Use_Debug_Libraries 1
+# PROP BASE Output_Dir "ARMV4IDbg"
+# PROP BASE Intermediate_Dir "ARMV4IDbg"
+# PROP BASE CPU_ID "{DC70F430-E78B-494F-A9D5-62ADC56443B8}"
+# PROP BASE Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP BASE Target_Dir ""
+# PROP Use_MFC 1
+# PROP Use_Debug_Libraries 1
+# PROP Output_Dir "ARMV4IDbg"
+# PROP Intermediate_Dir "ARMV4IDbg"
+# PROP CPU_ID "{DC70F430-E78B-494F-A9D5-62ADC56443B8}"
+# PROP Platform_ID "{8A9A2F80-6887-11D3-842E-005004848CBA}"
+# PROP Target_Dir ""
+# ADD BASE RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "THUMB" /d "_THUMB_" /d "ARM" /d "_ARM_" /d "ARMV4I" /r
+# ADD RSC /l 0x409 /d UNDER_CE=$(CEVersion) /d _WIN32_WCE=$(CEVersion) /d "UNICODE" /d "_UNICODE" /d "DEBUG" /d "$(CePlatform)" /d "THUMB" /d "_THUMB_" /d "ARM" /d "_ARM_" /d "ARMV4I" /r
+# ADD BASE CPP /nologo /W3 /Zi /Od /D "DEBUG" /D "ARM" /D "_ARM_" /D "ARMV4I" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "UNICODE" /D "_UNICODE" /Yu"stdafx.h" /QRarch4T /QRinterwork-return /M$(CECrtMTDebug) /c
+# ADD CPP /nologo /W3 /Zi /Od /D "DEBUG" /D "ARM" /D "_ARM_" /D "ARMV4I" /D UNDER_CE=$(CEVersion) /D _WIN32_WCE=$(CEVersion) /D "$(CePlatform)" /D "UNICODE" /D "_UNICODE" /Yu"stdafx.h" /QRarch4T /QRinterwork-return /M$(CECrtMTDebug) /c
+# ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+# ADD MTL /nologo /D "_DEBUG" /mktyplib203 /o "NUL" /win32
+BSC32=bscmake.exe
+# ADD BASE BSC32 /nologo
+# ADD BSC32 /nologo
+LINK32=link.exe
+# ADD BASE LINK32 /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"wWinMainCRTStartup" /debug /subsystem:$(CESubsystem) /MACHINE:THUMB
+# ADD LINK32 /nologo /base:"0x00010000" /stack:0x10000,0x1000 /entry:"wWinMainCRTStartup" /debug /subsystem:$(CESubsystem) /MACHINE:THUMB
+
+!ENDIF 
+
+# Begin Target
+
+# Name "LQDetect - Win32 (WCE ARMV4I) Release"
+# Name "LQDetect - Win32 (WCE ARMV4I) Debug"
+# Begin Group "Source Files"
+
+# PROP Default_Filter "cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
+# Begin Source File
+
+SOURCE=.\CppSQLite3U.cpp
+DEP_CPP_CPPSQ=\
+	".\CppSQLite3U.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogContainer.cpp
+DEP_CPP_DIALO=\
+	".\CppSQLite3U.h"\
+	".\DialogContainer.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\LQDetect.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_DIALO=\
+	".\ipapi.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogDemarcate.cpp
+DEP_CPP_DIALOG=\
+	".\CppSQLite3U.h"\
+	".\DialogDemarcate.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\LQDetect.h"\
+	".\PSerialPort.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogDetect.cpp
+DEP_CPP_DIALOGD=\
+	".\DialogDetect.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogOtherParameter.h"\
+	".\LQDetect.h"\
+	".\PSerialPort.h"\
+	".\PSerialPortX.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogGeneral.cpp
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogLiquid.cpp
+DEP_CPP_DIALOGL=\
+	".\CppSQLite3U.h"\
+	".\DialogLiquid.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\LQDetect.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_DIALOGL=\
+	".\ipapi.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogOK.cpp
+DEP_CPP_DIALOGO=\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\LQDetect.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogOKCANCEL.cpp
+DEP_CPP_DIALOGOK=\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\LQDetect.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogOtherParameter.cpp
+DEP_CPP_DIALOGOT=\
+	".\CppSQLite3U.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogOtherParameter.h"\
+	".\LQDetect.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogParameter.cpp
+DEP_CPP_DIALOGP=\
+	"..\_Common\color.h"\
+	".\CppSQLite3U.h"\
+	".\DialogContainer.h"\
+	".\DialogLiquid.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogOtherParameter.h"\
+	".\DialogParameter.h"\
+	".\DialogSetDisplay.h"\
+	".\LQDetect.h"\
+	".\PSerialPort.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_DIALOGP=\
+	".\ipapi.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogPassword.cpp
+DEP_CPP_DIALOGPA=\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogPassword.h"\
+	".\LQDetect.h"\
+	".\StdAfx.h"\
+	
+NODEP_CPP_DIALOGPA=\
+	".\ipapi.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogSetDisplay.cpp
+DEP_CPP_DIALOGS=\
+	".\CppSQLite3U.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogSetDisplay.h"\
+	".\LQDetect.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogSplash.cpp
+DEP_CPP_DIALOGSP=\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogSplash.h"\
+	".\LQDetect.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogTest.cpp
+DEP_CPP_DIALOGT=\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogTest.h"\
+	".\LQDetect.h"\
+	".\PSerialPort.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\LQDetect.cpp
+DEP_CPP_LQDET=\
+	".\CppSQLite3U.h"\
+	".\DialogDetect.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogParameter.h"\
+	".\DialogPassword.h"\
+	".\DialogSplash.h"\
+	".\LQDetect.h"\
+	".\LQDetectDlg.h"\
+	".\PSerialPort.h"\
+	".\PSerialPortX.h"\
+	".\sqlite3.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\LQDetect.rc
+# End Source File
+# Begin Source File
+
+SOURCE=.\LQDetectDlg.cpp
+DEP_CPP_LQDETE=\
+	".\DialogDemarcate.h"\
+	".\DialogDetect.h"\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\DialogTest.h"\
+	".\LQDetect.h"\
+	".\LQDetectDlg.h"\
+	".\PSerialPort.h"\
+	".\PSerialPortX.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\PSerialPort.cpp
+DEP_CPP_PSERI=\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\LQDetect.h"\
+	".\PSerialPort.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\PSerialPortX.cpp
+DEP_CPP_PSERIA=\
+	".\DialogOK.h"\
+	".\DialogOKCANCEL.h"\
+	".\LQDetect.h"\
+	".\PSerialPortX.h"\
+	".\StdAfx.h"\
+	
+# End Source File
+# Begin Source File
+
+SOURCE=.\StdAfx.cpp
+DEP_CPP_STDAF=\
+	".\StdAfx.h"\
+	
+# ADD CPP /Yc"stdafx.h"
+# End Source File
+# End Group
+# Begin Group "Header Files"
+
+# PROP Default_Filter "h;hpp;hxx;hm;inl"
+# Begin Source File
+
+SOURCE=..\_Common\color.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\CppSQLite3U.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogContainer.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogDemarcate.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogDetect.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogGeneral.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogLiquid.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogOK.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogOKCANCEL.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogOtherParameter.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogParameter.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogPassword.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogSetDisplay.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogSplash.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\DialogTest.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\LQDetect.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\LQDetectDlg.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\newres.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PSerialPort.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\PSerialPortX.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\Resource.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\sqlite3.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\StdAfx.h
+# End Source File
+# Begin Source File
+
+SOURCE=.\SQLite3.lib
+# End Source File
+# End Group
+# Begin Group "Resource Files"
+
+# PROP Default_Filter "ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+# Begin Source File
+
+SOURCE=.\res\logo.bmp
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\LQDetect.ico
+# End Source File
+# Begin Source File
+
+SOURCE=.\res\LQDetect.rc2
+# PROP Exclude_From_Scan -1
+# PROP BASE Exclude_From_Build 1
+# PROP Exclude_From_Build 1
+# End Source File
+# End Group
+# Begin Source File
+
+SOURCE=.\ReadMe.txt
+# End Source File
+# End Target
+# End Project

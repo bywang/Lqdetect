@@ -1,0 +1,717 @@
+//Microsoft eMbedded Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "newres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""newres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\LQDetect.rc2""  // non-Microsoft eMbedded Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""wceres.rc""         // WCE-specific components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\LQDetect.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LQDETECT_DIALOG DIALOG DISCARDABLE  0, 0, 198, 156
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÇëÑ¡Ôñ¹¦ÄÜ"
+FONT 22, "ËÎÌå"
+BEGIN
+    DEFPUSHBUTTON   "Òº Ìå ¼ì ²â",IDC_BUTTON_DETECT,7,7,184,70
+    PUSHBUTTON      "ÏµÍ³²âÊÔ",IDC_BUTTON_TEST,101,81,90,68
+    PUSHBUTTON      "±ê×¼¿é±ê¶¨",IDC_BUTTON_DEMARCATE,7,81,90,68
+    PUSHBUTTON      "²ÎÊý¹ÜÀí",IDC_BUTTON_PARAMETER,101,140,29,9,NOT 
+                    WS_VISIBLE | WS_DISABLED | NOT WS_TABSTOP
+    PUSHBUTTON      "¹Ø±Õ³ÌÐò",IDOK,68,140,29,9,NOT WS_VISIBLE | WS_DISABLED | 
+                    NOT WS_TABSTOP
+END
+
+IDD_DIALOG_PARAMETER DIALOG DISCARDABLE  0, 0, 527, 380
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ª²ÎÊý¹ÜÀí"
+FONT 9, "ËÎÌå"
+BEGIN
+    PUSHBUTTON      "ÊÖ¶¯²ÉÑù",IDC_BUTTON_MANUAL_DETECT,415,297,50,14
+    PUSHBUTTON      "×Ô¶¯²ÉÑù",IDC_BUTTON_AUTO_DETECT,466,297,50,14
+    PUSHBUTTON      "±£´æ½á¹û",IDC_BUTTON_SAVE_SAMPLINGDATA,415,314,50,14
+    PUSHBUTTON      "ÔØÈë½á¹û",IDC_BUTTON_LOAD_SAMPLINGDATA,466,314,50,14
+    PUSHBUTTON      "Ñ¡É¾",IDC_BUTTON_DELETE_DETECT_VALUE,415,334,25,14
+    PUSHBUTTON      "È«É¾",IDC_BUTTON_DELETEALL_DETECT_VALUE,443,334,25,14
+    PUSHBUTTON      "¸üÐÂÑù±¾",IDC_BUTTON_UPDATE_SWATCH,471,334,45,14
+    PUSHBUTTON      "ÆäËü²ÎÊý",IDC_BUTTON_OTHER_PARAMETER,415,359,50,14
+    PUSHBUTTON      "ÍË³ö",IDOK,466,359,50,14
+    RADIOBUTTON     "µ¥Ñùµ¥´Î",IDC_RADIO_DRAWSS,415,19,48,10
+    RADIOBUTTON     "¶àÑùµ¥´Î",IDC_RADIO_DRAWMS,469,19,48,10
+    RADIOBUTTON     "µ¥Ñù¶à´Î",IDC_RADIO_DRAWSM,415,37,48,10
+    PUSHBUTTON      "ÏÔÊ¾ÉèÖÃ",IDC_BUTTON_SET_DISPLAY,466,35,48,14
+    COMBOBOX        IDC_COMBO_SECOND,461,60,40,366,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    RADIOBUTTON     "µÚIÍ¨µÀ",IDC_RADIO_CHANNEL1,414,76,48,14
+    RADIOBUTTON     "µÚIIÍ¨µÀ",IDC_RADIO_CHANNEL2,466,76,48,14
+    PUSHBUTTON      "ÈÝÆ÷",IDC_BUTTON_CONTAINER,414,93,25,14
+    COMBOBOX        IDC_COMBO_CONTAINER,440,93,80,220,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "ÒºÌå",IDC_BUTTON_LIQUID,414,108,25,14
+    COMBOBOX        IDC_COMBO_LIQUID,440,109,80,200,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",IDC_LIST_DETECTVALUE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,417,134,95,160
+    CONTROL         "List1",IDC_LIST_SWATCH,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_AUTOARRANGE | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,7,243,396,95
+    EDITTEXT        IDC_EDIT_COUNTUP,44,342,50,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_COUNTDOWN,138,342,50,14,ES_CENTER | 
+                    ES_MULTILINE | ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_COUNTAVERAGE,231,342,50,14,ES_CENTER | 
+                    ES_MULTILINE | ES_AUTOHSCROLL | ES_NUMBER
+    PUSHBUTTON      "±£´æÐÞ¸Ä",IDC_BUTTON_SAVE_SWATCH_MODIFY,294,342,50,14
+    PUSHBUTTON      "É¾³ýÑ¡Ôñ",IDC_BUTTON_DELETE_SWATCH,352,342,50,14
+    CONTROL         "»æÍ¼Çø",IDC_STATIC_DRAW,"Static",SS_LEFTNOWORDWRAP | 
+                    NOT WS_VISIBLE | WS_BORDER | WS_GROUP,16,7,386,230
+    LTEXT           "²ÉÑù¼ä¸ô",IDC_STATIC,418,62,34,8
+    LTEXT           "Ãë",IDC_STATIC,510,62,10,8
+    LTEXT           "×îÐ¡¼ÆÊý",IDC_STATIC,100,345,34,8
+    EDITTEXT        IDC_EDIT_INFO,44,359,360,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "²ÉÑù×´Ì¬",IDC_STATIC,7,362,34,8
+    LTEXT           "Æ½¾ù¼ÆÊý",IDC_STATIC,193,345,34,8
+    LTEXT           "×î´ó¼ÆÊý",IDC_STATIC,7,345,34,8
+    GROUPBOX        "Í¼ÏñÏÔÊ¾",IDC_STATIC,410,7,110,50,BS_CENTER
+    GROUPBOX        "²ÉÑù½á¹û",IDC_STATIC,410,124,110,230,BS_CENTER
+END
+
+IDD_DIALOG_PASSWORD DIALOG DISCARDABLE  0, 0, 162, 60
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "ÇëÊäÈë²Ù×÷¿ÚÁî"
+FONT 18, "ËÎÌå"
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSWORD,31,15,100,14,ES_PASSWORD | 
+                    ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "È·¶¨",IDOK,23,39,50,14
+    PUSHBUTTON      "È¡Ïû",IDCANCEL,89,39,50,14
+END
+
+IDD_DIALOG_DETECT DIALOG DISCARDABLE  0, 0, 212, 168
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÏµÍ³¹ÜÀí"
+FONT 20, "ËÎÌå"
+BEGIN
+    COMBOBOX        IDC_COMBO_CONTAINER,40,26,166,144,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "²âÁ¿",IDC_BUTTON_START,9,143,50,20
+    RADIOBUTTON     "I",IDC_RADIO_CHANNEL1,40,3,32,18,BS_PUSHLIKE
+    RADIOBUTTON     "II",IDC_RADIO_CHANNEL2,71,3,32,18,BS_PUSHLIKE
+    RADIOBUTTON     "±ÈÖµ·¨",IDC_RADIO_SAMPLINGMETHOD1,142,3,32,18,
+                    BS_PUSHLIKE
+    RADIOBUTTON     "¼ÆÊý·¨",IDC_RADIO_SAMPLINGMETHOD2,174,3,32,18,
+                    BS_PUSHLIKE
+    PUSHBUTTON      "±ê×¼¿é±ê¶¨",IDC_BUTTON_DEMARCATE,60,143,50,20
+    PUSHBUTTON      "ÏµÍ³²âÊÔ",IDC_BUTTON_TEST,111,143,50,20
+    PUSHBUTTON      "ÉèÖÃ",IDC_BUTTON_SET_X,10,101,25,15
+    PUSHBUTTON      "¶ÁÈ¡",IDC_BUTTON_READ_X,10,119,25,15
+    CONTROL         "Spin1",IDC_SPIN_SET_X_V,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,79,102,
+                    6,14
+    CONTROL         "Spin1",IDC_SPIN_SET_X_A,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,146,
+                    102,6,14
+    EDITTEXT        IDC_EDIT_TIMES,40,58,63,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE,40,41,63,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_ISSAFE,143,41,63,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_X_V,54,121,24,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_X_A,110,121,24,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_X_T,166,121,24,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_INFO,6,75,200,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "ÀÛ¼Æ´ÎÊý",IDC_STATIC,6,60,32,8
+    LTEXT           "¼ì²âÈÝÆ÷",IDC_STATIC,6,27,32,8
+    LTEXT           "²âÁ¿Öµ",IDC_STATIC,6,43,24,8
+    LTEXT           "Í¨µÀÑ¡Ôñ",IDC_STATIC,6,8,32,8
+    LTEXT           "µçÑ¹",IDC_STATIC,37,123,16,8
+    LTEXT           "µçÁ÷",IDC_STATIC,92,123,16,8
+    LTEXT           "ÎÂ¶È",IDC_STATIC,148,123,16,8
+    LTEXT           "kV",IDC_STATIC,80,123,10,8
+    LTEXT           "mA",IDC_STATIC,136,123,10,8
+    LTEXT           "¡æ",IDC_STATIC,192,123,10,8
+    EDITTEXT        IDC_EDIT_SET_X_V,54,103,24,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_SET_X_A,121,103,24,12,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "µçÑ¹",IDC_STATIC,37,105,16,8
+    LTEXT           "µçÁ÷",IDC_STATIC,103,105,16,8
+    LTEXT           "kV",IDC_STATIC,86,105,10,8
+    LTEXT           "mA",IDC_STATIC,154,105,10,8
+    LTEXT           "²âÁ¿½á¹û",IDC_STATIC,108,43,32,8
+    PUSHBUTTON      "¿ªÊ¼Ô¤ÈÈ",IDC_BUTTON_WARM_UP,164,101,40,15
+    GROUPBOX        "XÉäÏß»ú×´Ì¬Öµ",IDC_STATIC,6,91,200,47,BS_CENTER
+    LTEXT           "·½·¨Ñ¡Ôñ",IDC_STATIC,106,8,32,8
+    PUSHBUTTON      "Çå³ý´ÎÊý",IDC_BUTTON_CLEAR_TIMES,108,57,35,15
+    PUSHBUTTON      "·µ»Ø",IDC_BUTTON_RETURN,162,142,44,20
+END
+
+IDD_DIALOG_TEST DIALOG DISCARDABLE  0, 0, 212, 168
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÏµÍ³²âÊÔ"
+FONT 20, "ËÎÌå"
+BEGIN
+    PUSHBUTTON      "¿ªÊ¼²âÊÔ",IDC_BUTTON_START,165,7,40,14
+    CONTROL         "µÚIÍ¨µÀ",IDC_RADIO_CHANNEL1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,7,7,40,15
+    CONTROL         "µÚIIÍ¨µÀ",IDC_RADIO_CHANNEL2,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,49,7,40,15
+    COMBOBOX        IDC_COMBO_SECOND,128,8,20,160,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "·µ»Ø",IDCANCEL,165,26,40,14
+    EDITTEXT        IDC_EDIT_VALUE1,12,56,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE2,12,72,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE3,12,88,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE4,12,104,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE5,12,120,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE6,61,56,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE7,61,72,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE8,61,88,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE9,61,104,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE10,61,120,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE11,111,56,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE12,111,72,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE13,111,88,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE14,111,104,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE15,111,120,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE16,160,56,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE17,160,72,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE18,160,88,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE19,160,104,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_VALUE20,160,120,40,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "¼ä¸ôÊ±¼ä",IDC_STATIC,93,10,32,8
+    LTEXT           "Ãë",IDC_STATIC,150,10,10,8
+    GROUPBOX        "²âÊÔÊý¾Ý",IDC_STATIC,7,44,198,96,BS_CENTER
+    EDITTEXT        IDC_EDIT_INFO,7,147,198,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_COMBO_CONTAINER,47,28,110,133,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "¼ì²âÈÝÆ÷",IDC_STATIC,10,30,32,8
+END
+
+IDD_DIALOG_DEMARCATE DIALOG DISCARDABLE  0, 0, 212, 168
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ª±ê×¼Ñù±¾±ÈÖµÏµÊý±ê¶¨"
+FONT 20, "ËÎÌå"
+BEGIN
+    COMBOBOX        IDC_COMBO_CONTAINER,33,31,70,220,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LIQUID,129,31,70,200,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "µÚIÍ¨µÀ",IDC_RADIO_CHANNEL1,"Button",BS_AUTORADIOBUTTON | 
+                    BS_PUSHLIKE,58,49,70,20
+    CONTROL         "µÚIIÍ¨µÀ",IDC_RADIO_CHANNEL2,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,135,49,70,20
+    PUSHBUTTON      "¿ªÊ¼±ê¶¨",IDC_BUTTON_START,24,141,50,20
+    PUSHBUTTON      "±£´æ½á¹û",IDC_BUTTON_SAVE,81,141,50,20
+    PUSHBUTTON      "·µ»Ø",IDCANCEL,138,141,50,20
+    EDITTEXT        IDC_EDIT_OLDVALUE1,58,72,70,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_NEWVALUE1,58,89,70,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_RATIO1,58,106,70,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Ô­³§±ê¶¨Öµ",IDC_STATIC,7,75,40,8
+    LTEXT           "µ±Ç°±ê¶¨Öµ",IDC_STATIC,7,92,40,8
+    LTEXT           "±ÈÖµÏµÊý",IDC_STATIC,15,109,32,8
+    EDITTEXT        IDC_EDIT_INFO,7,123,198,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_OLDVALUE2,135,72,70,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_NEWVALUE2,135,89,70,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_RATIO2,135,106,70,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "ÈÝÆ÷",IDC_STATIC,14,33,16,8
+    LTEXT           "ÒºÌå",IDC_STATIC,108,33,16,8
+    GROUPBOX        "±ê×¼Ñù±¾Ñ¡Ôñ",IDC_STATIC,7,21,198,24,BS_CENTER
+    LTEXT           "Í¨µÀÑ¡Ôñ",IDC_STATIC,15,55,32,8
+    LTEXT           "Çë¾¡Á¿±£Ö¤XÉäÏß»úÎÂ¶È´óÓÚ30¡æÊ±½øÐÐ±ÈÖµÏµÊý±ê¶¨£¡",
+                    IDC_STATIC,15,7,190,8,NOT WS_GROUP
+END
+
+IDD_DIALOG_SETDISPLAY DIALOG DISCARDABLE  0, 0, 250, 171
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÏÔÊ¾ÉèÖÃ"
+FONT 12, "ËÎÌå"
+BEGIN
+    CONTROL         "List1",IDC_LIST_SAMPLE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,7,180,157
+    PUSHBUTTON      "±£´æÉèÖÃ",IDOK,193,132,50,14
+    PUSHBUTTON      "·µ»Ø",IDCANCEL,193,150,50,14
+    LTEXT           "ÇúÏßÑÕÉ«",IDC_STATIC,200,65,35,8
+    CONTROL         "",IDC_STATIC_LABELCOLOR,"Static",SS_LEFTNOWORDWRAP | 
+                    NOT WS_VISIBLE | WS_BORDER | WS_GROUP,193,75,50,14
+    PUSHBUTTON      "Ñ¡ÔñÑÕÉ«",IDC_BUTTON_COLOR_DIS,193,93,50,14
+    CONTROL         "ÏÔÊ¾ÇúÏß",IDC_CHECK_DIS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,197,7,46,10
+    PUSHBUTTON      "È«²¿ÏÔÊ¾",IDC_BUTTON_DISPLAYALL,193,19,50,14
+    PUSHBUTTON      "È«²¿Òþ²Ø",IDC_BUTTON_HIDEALL,193,37,50,14
+END
+
+IDD_DIALOG_OTHERPARAMETER DIALOG DISCARDABLE  0, 0, 236, 111
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÆäËü²ÎÊý"
+FONT 14, "ËÎÌå"
+BEGIN
+    COMBOBOX        IDC_COMBO_SAMPLINGTIMES,113,7,48,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_THRESHOLDBEGIN,60,37,50,14,ES_CENTER | 
+                    ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    EDITTEXT        IDC_EDIT_THRESHOLDEND,60,59,50,14,ES_CENTER | 
+                    ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    COMBOBOX        IDC_COMBO_CHANNELINTERFACE1,175,38,48,65,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_CHANNELINTERFACE2,175,60,48,49,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "±£´æÉèÖÃ",IDC_BUTTON_SAVE,59,84,50,20
+    PUSHBUTTON      "·µ»Ø",IDCANCEL,128,84,50,20
+    LTEXT           "µÀãÐ¿ªÊ¼µã",IDC_STATIC,14,40,41,8
+    LTEXT           "µÀãÐ½áÊøµã",IDC_STATIC,14,62,41,8
+    LTEXT           "Í¨µÀI",IDC_STATIC,144,40,25,8
+    LTEXT           "Í¨µÀII",IDC_STATIC,144,62,25,8
+    LTEXT           "²ÉÑù´ÎÊý",IDC_STATIC,75,9,33,8
+    CONTROL         "Spin1",IDC_SPIN_TBEGIN,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ARROWKEYS | UDS_NOTHOUSANDS,111,36,
+                    10,15
+    CONTROL         "Spin1",IDC_SPIN_TEND,"msctls_updown32",UDS_SETBUDDYINT | 
+                    UDS_ARROWKEYS | UDS_NOTHOUSANDS,111,58,10,15
+    GROUPBOX        "È¡Êý·¶Î§Éè¶¨",IDC_STATIC,7,25,126,53,BS_CENTER
+    GROUPBOX        "Í¨µÀ¶ÔÓ¦½Ó¿Ú",IDC_STATIC,137,25,92,53,BS_CENTER
+END
+
+IDD_DIALOG_LIQUID DIALOG DISCARDABLE  0, 0, 294, 250
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÔö¼ÓÒºÌå"
+FONT 12, "ËÎÌå"
+BEGIN
+    EDITTEXT        IDC_EDIT_ID,45,176,99,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_NAME,45,193,150,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_ISSAFE,45,210,50,30,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "ÏÔÊ¾ÇúÏß",IDC_CHECK_DIS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,105,211,46,10
+    PUSHBUTTON      "Ñ¡ÔñÑÕÉ«",IDC_BUTTON_COLOR_DIS,247,209,40,14
+    PUSHBUTTON      "Ôö¼Ó",IDC_BUTTON_ADDNEW,82,229,50,14
+    PUSHBUTTON      "·µ»Ø",IDCANCEL,159,229,50,14
+    CONTROL         "List1",IDC_LIST_LIQUID,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,7,280,163
+    LTEXT           "ÇúÏßÑÕÉ«",IDC_STATIC,155,212,35,8
+    CONTROL         "",IDC_STATIC_LABELCOLOR,"Static",SS_LEFTNOWORDWRAP | 
+                    NOT WS_VISIBLE | WS_BORDER | WS_GROUP,194,209,50,14
+    LTEXT           "ÒºÌå±àºÅ",IDC_STATIC,7,179,33,8
+    LTEXT           "ÒºÌåÃû³Æ",IDC_STATIC,7,196,33,8
+    LTEXT           "ÒºÌåÌØÐÔ",IDC_STATIC,7,212,33,8
+    LTEXT           "(·¶Î§1-99£¬ÇÒÓëÁÐ±íÖÐ±àºÅ²»ÄÜÖØ¸´)",IDC_STATIC,150,179,
+                    137,8
+    LTEXT           "(ÓëÁÐ±íÖÐÃû³Æ²»ÄÜÖØ¸´)",IDC_STATIC,198,196,89,8
+END
+
+IDD_DIALOG_CONTAINER DIALOG DISCARDABLE  0, 0, 264, 250
+STYLE DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÔö¼ÓÈÝÆ÷"
+FONT 12, "ËÎÌå"
+BEGIN
+    EDITTEXT        IDC_EDIT_ID,45,189,70,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_EDIT_NAME,45,206,120,14,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Ôö¼Ó",IDC_BUTTON_ADDNEW,70,229,50,14
+    PUSHBUTTON      "·µ»Ø",IDCANCEL,143,229,50,14
+    CONTROL         "List1",IDC_LIST_LIQUID,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,7,250,175
+    LTEXT           "ÈÝÆ÷±àºÅ",IDC_STATIC,7,192,33,8
+    LTEXT           "ÈÝÆ÷Ãû³Æ",IDC_STATIC,7,209,33,8
+    LTEXT           "(·¶Î§1-99£¬ÇÒÓëÁÐ±íÖÐ±àºÅ²»ÄÜÖØ¸´)",IDC_STATIC,120,192,
+                    137,8
+    LTEXT           "(ÓëÁÐ±íÖÐÃû³Æ²»ÄÜÖØ¸´)",IDC_STATIC,168,209,89,8
+END
+
+IDD_DIALOG_SPLASH DIALOG DISCARDABLE  0, 0, 198, 162
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+FONT 22, "ËÎÌå"
+BEGIN
+    CONTROL         136,IDC_STATIC,"Static",SS_BITMAP | SS_CENTERIMAGE,0,0,
+                    199,162
+END
+
+IDD_DIALOG_OK DIALOG DISCARDABLE  0, 0, 200, 70
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÌáÊ¾ÐÅÏ¢"
+FONT 16, "ËÎÌå"
+BEGIN
+    DEFPUSHBUTTON   "È·¶¨",IDOK,75,48,50,15
+    EDITTEXT        IDC_EDIT_TEXT,7,7,186,35,ES_CENTER | ES_MULTILINE | 
+                    ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP
+END
+
+IDD_DIALOG_OKCANCEL DIALOG DISCARDABLE  0, 0, 200, 70
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_APPWINDOW | 0x80000000L
+CAPTION "ÒºÌå°²¼ìÒÇ¡ª¡ªÇëÑ¡Ôñ"
+FONT 16, "ËÎÌå"
+BEGIN
+    PUSHBUTTON      "È·¶¨",IDOK,44,48,50,15
+    DEFPUSHBUTTON   "È¡Ïû",IDCANCEL,107,48,50,15
+    EDITTEXT        IDC_EDIT_TEXT,7,7,186,35,ES_CENTER | ES_MULTILINE | 
+                    ES_READONLY | NOT WS_BORDER | NOT WS_TABSTOP
+END
+
+IDD_DIALOG_GENERAL DIALOG DISCARDABLE  0, 0, 239, 171
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ÒºÌå°²¼ìÒÇ--ÒºÌå¼ì²â"
+FONT 10, "System"
+BEGIN
+    CTEXT           "ÈÝÆ÷Ñ¡Ôñ",IDC_STATIC_CONTAINER_SELECT,5,3,225,13,
+                    SS_CENTERIMAGE
+    PUSHBUTTON      "ËÜÁÏ",IDC_BUTTON_PLASTIC,5,19,70,25
+    PUSHBUTTON      "ÂÁÒ×À­¹Þ",IDC_BUTTON_ALUM,76,19,73,26
+    PUSHBUTTON      "ÆäËü",IDC_BUTTON_OTHERS,149,19,76,26
+    EDITTEXT        IDC_EDIT_CONTAINER,5,51,225,16,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_MEASURE_VALUE,5,69,225,15,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "ÏµÍ³¹ÜÀí",IDC_BUTTON_MANAGE,5,88,69,26
+    PUSHBUTTON      "±ê×¼¿éÐ£×¼",IDC_BUTTON_CAL,75,89,71,25
+    PUSHBUTTON      "¿ªÊ¼²âÁ¿",IDC_BUTTON_START,149,89,81,55
+    PUSHBUTTON      "X-RayÔ¤ÈÈ",IDC_BUTTON_XRAY,5,119,69,25
+    CTEXT           "ÎÂ¶È£¨¡æ£©",IDC_STATIC_TEMP,77,120,68,11
+    EDITTEXT        IDC_EDIT_TEMP,77,132,68,12,ES_CENTER | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_MEASURE_TIMES,191,146,39,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_LQDETECT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_DIALOG_PARAMETER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 520
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 373
+    END
+
+    IDD_DIALOG_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 53
+    END
+
+    IDD_DIALOG_DETECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 206
+    END
+
+    IDD_DIALOG_TEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 161
+    END
+
+    IDD_DIALOG_DEMARCATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 161
+    END
+
+    IDD_DIALOG_SETDISPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 164
+    END
+
+    IDD_DIALOG_OTHERPARAMETER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_DIALOG_LIQUID, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_DIALOG_CONTAINER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_DIALOG_OK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_DIALOG_OKCANCEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 193
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 63
+    END
+
+    IDD_DIALOG_GENERAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 230
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 158
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_KEY_ENTER ACCELERATORS DISCARDABLE 
+BEGIN
+    VK_RETURN,      IDR_KEY_ENTER,          VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_LOGO         BITMAP  DISCARDABLE     "res\\logo.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "LQDetect WCE MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "LQDetect\0"
+            VALUE "LegalCopyright", "Copyright © 2012\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "LQDetect.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "LQDetect Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\LQDetect.rc2"  // non-Microsoft eMbedded Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "wceres.rc"         // WCE-specific components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
