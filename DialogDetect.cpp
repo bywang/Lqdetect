@@ -85,27 +85,21 @@ BOOL CDialogDetect::OnInitDialog()
 	::SetWindowPos(m_hWnd,HWND_TOPMOST,0,0,0,0,SWP_NOMOVE |SWP_NOSIZE);
 
 	pApp=(CLQDetectApp *)AfxGetApp();
+    m_Serial = pApp->m_SerialP;
+    m_SerialX = pApp->m_SerialP;
 
-	m_bOpen	= m_Serial.OpenPort(_T("COM1:"),115200,8,ONESTOPBIT,NOPARITY);
-	if(!m_bOpen || !m_Serial.Activate())
+	if(!pApp->m_serialIsOk)
 	{
-		pApp->m_dlgOK.m_sText = _T("控制板通讯口初始化失败，无法进行测试！");
-		pApp->m_dlgOK.DoModal();
 		GetDlgItem(IDC_BUTTON_START)->EnableWindow(FALSE);
 		GetDlgItem(IDC_BUTTON_DEMARCATE)->EnableWindow(FALSE);
 		GetDlgItem(IDC_BUTTON_TEST)->EnableWindow(FALSE);
-	}
+	} 
 
-	BOOL bXOK(TRUE);
-	m_bOpen	= m_SerialX.OpenPort(_T("COM2:"),9600,8,ONESTOPBIT,NOPARITY);
-	if(!m_bOpen || !m_SerialX.Activate())
+	if(!pApp->m_serialXIsOk)
 	{
-		pApp->m_dlgOK.m_sText = _T("X射线机通讯口初始化失败，无法读取射线机状态值！");
-		pApp->m_dlgOK.DoModal();
 		GetDlgItem(IDC_BUTTON_READ_X)->EnableWindow(FALSE);
 		GetDlgItem(IDC_BUTTON_SET_X)->EnableWindow(FALSE);
 		GetDlgItem(IDC_BUTTON_WARM_UP)->EnableWindow(FALSE);
-		bXOK = FALSE;
 	}
 
 	OnRadioChannel1();		//默认通道一
@@ -120,7 +114,7 @@ BOOL CDialogDetect::OnInitDialog()
 //	s.Format("初始次数：%d", m_nTimes);
 //	AfxMessageBox(s);
 
-	if(bXOK)
+	if(pApp->m_serialXIsOk)
 	{
 		OnButtonReadX();
 	}
@@ -191,11 +185,11 @@ void CDialogDetect::OnDestroy()
 	//关灯
 	if(m_bSafeLightOpen)
 	{
-		m_Serial.ControlSafeLight(ControlCommandClose);
+		m_Serial->ControlSafeLight(ControlCommandClose);
 	}
 	if(m_bAlarmLightOpen)
 	{
-		m_Serial.ControlAlarmLight(ControlCommandClose);
+		m_Serial->ControlAlarmLight(ControlCommandClose);
 	}
 	m_Serial.Deactivate();
 	m_Serial.ClosePort();
@@ -213,11 +207,11 @@ void CDialogDetect::OnOK()
 	//关灯
 	if(m_bSafeLightOpen)
 	{
-		m_Serial.ControlSafeLight(ControlCommandClose);
+		m_Serial->ControlSafeLight(ControlCommandClose);
 	}
 	if(m_bAlarmLightOpen)
 	{
-		m_Serial.ControlAlarmLight(ControlCommandClose);
+		m_Serial->ControlAlarmLight(ControlCommandClose);
 	}
 	m_Serial.Deactivate();
 	m_Serial.ClosePort();
@@ -263,11 +257,11 @@ void CDialogDetect::OnTimer(UINT nIDEvent)
 	//关灯
 	if(m_bSafeLightOpen)
 	{
-		m_Serial.ControlSafeLight(ControlCommandClose);
+		m_Serial->ControlSafeLight(ControlCommandClose);
 	}
 	if(m_bAlarmLightOpen)
 	{
-		m_Serial.ControlAlarmLight(ControlCommandClose);
+		m_Serial->ControlAlarmLight(ControlCommandClose);
 	}
 	KillTimer(1);
 
@@ -316,14 +310,14 @@ void CDialogDetect::OnButtonStart()
 	//关灯
 	if(m_bSafeLightOpen)
 	{
-		m_Serial.ControlSafeLight(ControlCommandClose);
+		m_Serial->ControlSafeLight(ControlCommandClose);
 	}
 	if(m_bAlarmLightOpen)
 	{
-		m_Serial.ControlAlarmLight(ControlCommandClose);
+		m_Serial->ControlAlarmLight(ControlCommandClose);
 	}
 
-	if(!m_Serial.ControlXRadial(ControlCommandOpen))
+	if(!m_Serial->ControlXRadial(ControlCommandOpen))
 	{
 		m_sInfo	= _T("打开X射线机失败，请检查控制板或通讯线路！");
 		UpdateData(FALSE);
@@ -350,11 +344,11 @@ void CDialogDetect::OnButtonStart()
 	{
 		m_sInfo.Format(_T("测量中（第%d次采样），请稍候..."), i+1);
 		UpdateData(FALSE);
-		if(!m_Serial.ControlSampling(nSelChannelInterface))
+		if(!m_Serial->ControlSampling(nSelChannelInterface))
 		{
 			m_sInfo = _T("测量失败，请检查控制板或通讯线路！");
 			UpdateData(FALSE);
-			m_Serial.ControlXRadial(ControlCommandClose);
+			m_Serial->ControlXRadial(ControlCommandClose);
 			pApp->m_dlgOK.m_sText = _T("测量中止，请检查控制板或通讯线路！");
 			pApp->m_dlgOK.DoModal();
 			EnableControls();
@@ -362,12 +356,12 @@ void CDialogDetect::OnButtonStart()
 			m_bStartDetect = FALSE;
 			return;
 		}
-		nSamplingCount += m_Serial.m_nThresholdSamplingCount;
+		nSamplingCount += m_Serial->m_nThresholdSamplingCount;
 	}
 
 	m_sInfo = _T("关闭X射线机...");
 	UpdateData(FALSE);
-	m_Serial.ControlXRadial(ControlCommandClose);
+	m_Serial->ControlXRadial(ControlCommandClose);
 
 	m_sInfo = _T("测量结果分析中，请稍候...");
 	UpdateData(FALSE);
@@ -391,10 +385,10 @@ void CDialogDetect::OnButtonStart()
 		m_sIsSafe	= L"安全品";
 		m_sInfo		= _T("测量结果——安全品！");
 		UpdateData(FALSE);
-		m_Serial.ControlSafeLight(ControlCommandOpen);
+		m_Serial->ControlSafeLight(ControlCommandOpen);
 		m_bSafeLightOpen	= TRUE;
 //		Sleep(5000);
-//		m_Serial.ControlSafeLight(ControlCommandClose);
+//		m_Serial->ControlSafeLight(ControlCommandClose);
 //		m_bSafeLightOpen	= FALSE;
 	}
 	else
@@ -402,10 +396,10 @@ void CDialogDetect::OnButtonStart()
 		m_sIsSafe	= L"可疑品";
 		m_sInfo		= _T("测量结果——可疑品！！！");
 		UpdateData(FALSE);
-		m_Serial.ControlAlarmLight(ControlCommandOpen);
+		m_Serial->ControlAlarmLight(ControlCommandOpen);
 		m_bAlarmLightOpen	= TRUE;
 //		Sleep(5000);
-//		m_Serial.ControlAlarmLight(ControlCommandClose);
+//		m_Serial->ControlAlarmLight(ControlCommandClose);
 //		m_bAlarmLightOpen	= FALSE;
 	}
 	SetTimer(1,3000,NULL);
@@ -449,7 +443,7 @@ void CDialogDetect::OnButtonReadX()
 	UpdateData(FALSE);
 	
 	BeginWaitCursor();
-	if(!m_Serial.ControlXRadial(ControlCommandOpen))
+	if(!m_Serial->ControlXRadial(ControlCommandOpen))
 	{
 		m_sInfo	= _T("打开X射线机失败，请检查控制板或通讯线路！");
 		UpdateData(FALSE);
@@ -460,9 +454,9 @@ void CDialogDetect::OnButtonReadX()
 	m_sInfo		= _T("正在查询X射线机状态值...");
 	UpdateData(FALSE);
 
-	if(!m_SerialX.ReadXRadial())
+	if(!m_SerialX->ReadXRadial())
 	{
-		m_Serial.ControlXRadial(ControlCommandClose);
+		m_Serial->ControlXRadial(ControlCommandClose);
 		EndWaitCursor();
 		m_sInfo = _T("X射线机状态值读取失败，请检查X射线机和通讯线路！");
 		UpdateData(FALSE);
@@ -471,12 +465,12 @@ void CDialogDetect::OnButtonReadX()
 		EnableControls();
 		return;
 	}
- 	m_Serial.ControlXRadial(ControlCommandClose);
+ 	m_Serial->ControlXRadial(ControlCommandClose);
 	EndWaitCursor();
-	m_X_V = m_SerialX.m_sV;
-	m_X_A = m_SerialX.m_sA;
-	m_X_T = m_SerialX.m_sT;
-	m_X_fT	= m_SerialX.m_fT;
+	m_X_V = m_SerialX->m_sV;
+	m_X_A = m_SerialX->m_sA;
+	m_X_T = m_SerialX->m_sT;
+	m_X_fT	= m_SerialX->m_fT;
 	if(m_X_fT>=30.0)
 		m_sInfo = _T("请将待测物品放在选定通道处按《测量》");
 	else
@@ -493,7 +487,7 @@ void CDialogDetect::OnButtonSetX()
 	UpdateData(FALSE);
 	
 	BeginWaitCursor();
-	if(!m_SerialX.SetXV(m_nSetXV))
+	if(!m_SerialX->SetXV(m_nSetXV))
 	{
 		m_sInfo	= _T("设置X射线机电压失败，请检查控制板或通讯线路！");
 		UpdateData(FALSE);
@@ -501,7 +495,7 @@ void CDialogDetect::OnButtonSetX()
 		EnableControls();
 		return;
 	}
-	if(!m_SerialX.SetXA(m_nSetXA))
+	if(!m_SerialX->SetXA(m_nSetXA))
 	{
 		m_sInfo	= _T("设置X射线机电流失败，请检查控制板或通讯线路！");
 		UpdateData(FALSE);
@@ -547,7 +541,7 @@ void CDialogDetect::OnButtonWarmUp()
 		SetDlgItemText(IDC_BUTTON_WARM_UP,_T("停止预热"));
 		m_sInfo	= _T("打开X射线机...");
 		UpdateData(FALSE);
-		if(!m_Serial.ControlXRadial(ControlCommandOpen))
+		if(!m_Serial->ControlXRadial(ControlCommandOpen))
 		{
 			m_bWarmUp = FALSE;
 			m_sInfo	= _T("打开X射线机失败，请检查控制板或通讯线路！");
@@ -560,10 +554,10 @@ void CDialogDetect::OnButtonWarmUp()
 		}
 		m_sInfo	= _T("正在查询X射线机状态值...");
 		UpdateData(FALSE);
-		if(!m_SerialX.ReadXRadial())
+		if(!m_SerialX->ReadXRadial())
 		{
 			m_bWarmUp = FALSE;
-			m_Serial.ControlXRadial(ControlCommandClose);
+			m_Serial->ControlXRadial(ControlCommandClose);
 			m_sInfo = _T("X射线机状态值读取失败，请检查X射线机和通讯线路！");
 			UpdateData(FALSE);
 			pApp->m_dlgOK.m_sText = _T("X射线机状态值读取失败，请检查X射线机和通讯线路！预热停止！");
@@ -572,8 +566,8 @@ void CDialogDetect::OnButtonWarmUp()
 			SetDlgItemText(IDC_BUTTON_WARM_UP,_T("开始预热"));
 			return;
 		}
-		m_X_T = m_SerialX.m_sT;
-		m_X_fT = m_SerialX.m_fT;
+		m_X_T = m_SerialX->m_sT;
+		m_X_fT = m_SerialX->m_fT;
 		UpdateData(FALSE);
 		if(m_X_fT>=30.0)
 		{
@@ -606,7 +600,7 @@ void CDialogDetect::OnButtonWarmUp()
 				//如果超时：   
 				m_sInfo	= _T("关闭X射线机...");
 				UpdateData(FALSE);
-				m_Serial.ControlXRadial(ControlCommandClose);
+				m_Serial->ControlXRadial(ControlCommandClose);
 				TerminateThread(m_hWarmUpThread, NULL);
 			}
 			else
@@ -636,7 +630,7 @@ DWORD WINAPI CDialogDetect::AutoWarmUpThread(LPVOID lpParameter)
 	while (pDialog->m_bWarmUp)
 	{
 		Sleep(1000);
-		if(!pDialog->m_SerialX.ReadXRadial())
+		if(!pDialog->m_SerialX->ReadXRadial())
 		{
 			bError	= TRUE;
 			pDialog->m_sInfo = _T("X射线机状态值读取失败，请检查X射线机和通讯线路！");
@@ -647,8 +641,8 @@ DWORD WINAPI CDialogDetect::AutoWarmUpThread(LPVOID lpParameter)
 		}
 		else
 		{
-			pDialog->m_X_T = pDialog->m_SerialX.m_sT;
-			pDialog->m_X_fT = pDialog->m_SerialX.m_fT;
+			pDialog->m_X_T = pDialog->m_SerialX->m_sT;
+			pDialog->m_X_fT = pDialog->m_SerialX->m_fT;
 			pDialog->UpdateData(FALSE);
 			if(pDialog->m_X_fT>30.5)
 			{
@@ -658,7 +652,7 @@ DWORD WINAPI CDialogDetect::AutoWarmUpThread(LPVOID lpParameter)
 	}
 	if(!bError)
 	{
-		if(!pDialog->m_Serial.ControlXRadial(ControlCommandClose))
+		if(!pDialog->m_Serial->ControlXRadial(ControlCommandClose))
 		{
 			pDialog->m_sInfo	= _T("关闭X射线机失败，请检查控制板或通讯线路！");
 			pDialog->UpdateData(FALSE);
@@ -683,14 +677,12 @@ DWORD WINAPI CDialogDetect::AutoWarmUpThread(LPVOID lpParameter)
 void CDialogDetect::OnButtonDemarcate() 
 {
 	CDialogDemarcate dlg;
-	dlg.m_pSerial = &m_Serial;
 	dlg.DoModal();
 }
 
 void CDialogDetect::OnButtonTest() 
 {
 	CDialogTest dlg;
-	dlg.m_pSerial = &m_Serial;
 	dlg.DoModal();
 }
 

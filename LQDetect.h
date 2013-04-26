@@ -17,6 +17,8 @@
 #include "DialogOK.h"			//自定义确认框
 #include "DialogOKCANCEL.h"		//自定义选择框
 #include "CppSQLite3U.h"		//SQLite3头文件
+#include "PSerialPort.h"
+#include "PSerialPortX.h"
 
 /////////////////////////////////////////////////////////////////////////////
 // CLQDetectApp:
@@ -81,6 +83,15 @@ public:
 public:
 	CString			m_CurrentDir;				//当前运行目录
 	CString			m_strDbPath;				//数据库所以目录
+
+    // serial data
+
+    bool m_serialIsOk;
+    CPSerialPort *m_SerialP;
+    CPSerialPort m_Serial;
+    bool m_serialXIsOk;
+    CPSerialPortX *m_SerialXP;
+    CPSerialPortX m_SerialX;
 
 	//共用数据
 	UINT			m_para_channelinterface1;	//通道1使用板上接口

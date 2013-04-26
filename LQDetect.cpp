@@ -79,6 +79,33 @@ BOOL CLQDetectApp::InitInstance()
 
 	CDialogSplash	dlgSplash;
 	dlgSplash.DoModal();
+
+    // open the serial port
+    bool isOpen=false;
+
+	isOpen	= m_Serial.OpenPort(_T("COM1:"),115200,8,ONESTOPBIT,NOPARITY);
+	if(!isOpen || !m_Serial.Activate())
+	{
+		m_dlgOK.m_sText = _T("控制板通讯口初始化失败，无法进行测试！");
+		m_dlgOK.DoModal();
+        m_serialIsOk = false;
+        m_SerialP = NULL;
+    } else {
+        m_SerialP = &m_Serial;
+        m_serialIsOk = true;
+    }
+	
+	isOpen = m_SerialX.OpenPort(_T("COM2:"),9600,8,ONESTOPBIT,NOPARITY);
+	if(!m_bOpen || !m_SerialX.Activate())
+	{
+		m_dlgOK.m_sText = _T("X射线机通讯口初始化失败，无法读取射线机状态值！");
+		m_dlgOK.DoModal();
+        m_serialXIsOk = false;
+        m_SerialXP = NULL;
+    } else {
+        m_SerialXP = &m_SerialX;
+        m_serialXIsOk = true;
+    }
 	
 	int nResponse;
 

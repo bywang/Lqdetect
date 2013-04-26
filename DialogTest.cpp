@@ -99,6 +99,7 @@ BOOL CDialogTest::OnInitDialog()
 	
 	::SetWindowPos(m_hWnd,HWND_TOPMOST,0,0,0,0,SWP_NOMOVE |SWP_NOSIZE);
 	pApp=(CLQDetectApp *)AfxGetApp();
+    m_pSerial = pApp->m_SerialP;
 
 	OnRadioChannel1();
 

@@ -48,9 +48,8 @@ public:
 	BOOL	SampleIsSafe(UINT nSamplingCount, UINT nSelChannelInterface);	//样品是否安全
 	
 	//串口类变量
-	CPSerialPort	m_Serial;		//控制板通讯口（COM1）
-	CPSerialPortX	m_SerialX;		//X射线机通讯口（COM2）
-	BOOL			m_bOpen;
+	CPSerialPort	*m_Serial;		//控制板通讯口（COM1）
+	CPSerialPortX	*m_SerialX;		//X射线机通讯口（COM2）
 
 // Dialog Data
 	//{{AFX_DATA(CDialogDetect)
