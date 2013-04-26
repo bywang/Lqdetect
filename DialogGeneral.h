@@ -16,6 +16,8 @@ class CDialogGeneral : public CDialog
 public:
 	CDialogGeneral(CWnd* pParent = NULL);   // standard constructor
 	CLQDetectApp	*pApp;
+	CPSerialPort*	m_pSerial;
+	CPSerialPortX*	m_pSerialX;
 
 // Dialog Data
 	//{{AFX_DATA(CDialogGeneral)

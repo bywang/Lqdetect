@@ -104,7 +104,19 @@ BOOL CDialogGeneral::OnInitDialog()
 	CDialog::OnInitDialog();
 
 	pApp=(CLQDetectApp *)AfxGetApp();
+    m_pSerial = pApp->m_SerialP;
+    m_pSerialX = pApp->m_SerialXP;
 	
+	if(!pApp->m_serialIsOk)
+	{
+		GetDlgItem(IDC_BUTTON_CAL)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BUTTON_START)->EnableWindow(FALSE);
+		GetDlgItem(IDC_BUTTON_MANAGE)->EnableWindow(FALSE);
+	} 
+	if(!pApp->m_serialXIsOk)
+	{
+		GetDlgItem(IDC_BUTTON_XRAY)->EnableWindow(FALSE);
+	}
 	// TODO: Add extra initialization here
 	
 	return TRUE;  // return TRUE unless you set the focus to a control
